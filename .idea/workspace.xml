@@ -40,7 +40,7 @@
       <file leaf-file-name="user_spec.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spec/models/user_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="46" selection-start="357" selection-end="357" vertical-scroll-proportion="0.23396881" vertical-offset="0" max-vertical-offset="577">
+            <state line="9" column="47" selection-start="358" selection-end="358" vertical-scroll-proportion="0.23396881" vertical-offset="0" max-vertical-offset="577">
               <folding />
             </state>
           </provider>
@@ -350,7 +350,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/models/user_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="46" selection-start="357" selection-end="357" vertical-scroll-proportion="0.23396881" vertical-offset="0" max-vertical-offset="577">
+        <state line="9" column="47" selection-start="358" selection-end="358" vertical-scroll-proportion="0.23396881" vertical-offset="0" max-vertical-offset="577">
           <folding />
         </state>
       </provider>
