@@ -7,7 +7,7 @@ describe User do
       #user1 = user.username("user1")
       #user2 = user.username("user2")
       #user.reload.username.should eq("datslife")
-      expect(user.username).to eq("datslife2222")
+      expect(user.username).to eq("datslife")
     end
   end
 end
