@@ -1,11 +1,8 @@
 box: inwy/ubuntu12.04-ruby2.1.2@0.1.0
-services:
-- wercker/postgresql
 build:
 steps:
 - bundle-install
 - rails-database-yml:
-service: postgresql
 - script:
 name: echo ruby information
 code: |
