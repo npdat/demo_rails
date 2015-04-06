@@ -1,13 +1,30 @@
-box: wercker/ubuntu12.04-ruby2.0.0
+box: inwy/ubuntu12.04-ruby2.1.2@0.1.0
+services:
+- wercker/postgresql
 build:
-    steps:
-        # Execute the bundle install step, a step provided by wercker
-        - bundle install --without production
-        - rake db:create
-        - rake db:schema:load
-        - rake db:test:prepare
-        - rake spec RAILS_ENV=test
-        # # Execute a custom script step.
-        # - script:
-        #     name: middleman build
-        #     code: bundle exec middleman build --verbose
+steps:
+- bundle-install
+- rails-database-yml:
+service: postgresql
+- script:
+name: echo ruby information
+code: |
+echo "ruby version $(ruby --version) running!"
+echo "from location $(which ruby)"
+echo -p "gem list: $(gem list)"
+- script:
+name: Set up db
+code: RAILS_ENV=test bundle exec rake db:schema:load
+- script:
+name: Run RSpec
+code: bundle exec rspec
+deploy:
+steps:
+- heroku-deploy:
+install-toolbelt: true
+- script:
+name: Migrate DB
+code: heroku run rake db:migrate --app $HEROKU_APP_NAME
+- script:
+name: Update assets
+code: heroku run rake add_static_assets --app $HEROKU_APP_NAME
