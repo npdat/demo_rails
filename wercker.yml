@@ -2,6 +2,4 @@ box: inwy/ubuntu12.04-ruby2.1.2@0.1.0
 build:
 steps:
 - bundle-install
-- script:
-name: Run RSpec
-code: bundle exec rspec
+- bundle exec rspec
