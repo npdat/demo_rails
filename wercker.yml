@@ -3,7 +3,8 @@ build:
     steps:
         # Execute the bundle install step, a step provided by wercker
         - bundle-install
-        # Execute a custom script step.
-        - script:
-            name: middleman build
-            code: bundle exec middleman build --verbose
+        - rake
+        # # Execute a custom script step.
+        # - script:
+        #     name: middleman build
+        #     code: bundle exec middleman build --verbose
