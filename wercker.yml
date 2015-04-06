@@ -2,8 +2,11 @@ box: wercker/ruby
 build:
     steps:
         # Execute the bundle install step, a step provided by wercker
-        - bundle-install
-        - rake
+        - bundle install --without production
+        - rake db:create
+        - rake db:schema:load
+        - rake db:test:prepare
+        - rake spec RAILS_ENV=test
         # # Execute a custom script step.
         # - script:
         #     name: middleman build
